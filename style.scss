@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --background-color: #ffffff;
+  --transition: all 0.3s ease;
+  --yellow: #eed200;
+  --red: #f84040;
+  --grey: #bbbcc8;
+  --dark: #555;
+  --white: white;
+  --light: #eaeaf0;
+}
+
+$border-radius: 20px;
+
+body {
+  background-color: var(--background-color);
+  color: var(--dark);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.movie {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  background-color: var(--light);
+  padding: 1rem;
+  border-radius: $border-radius / 2;
+  box-shadow: 0 0 50px var(--grey);
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+  }
+  &-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  &-poster {
+    img {
+      width: 120px;
+      height: 160px;
+      overflow: auto;
+      object-fit: cover;
+      border-radius: $border-radius / 2;
+      display: inline-flex;
+    }
+  }
+  &-content {
+    width: 100%;
+    margin-left: 10px;
+    h1 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      &:last-child {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  select {
+    outline: none;
+    border: none;
+    background-color: var(--white);
+    border-radius: $border-radius / 3;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0rem;
+  }
+  .ticket {
+    background-color: var(--light);
+    border-radius: $border-radius / 2;
+    padding: 1rem;
+    border: 3px dashed var(--grey);
+    min-width: 240px;
+    min-height: 130px;
+    font-size: 0.8rem;
+    text-align: center;
+    display: none;
+    @media screen and (max-width: 576px) {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .hr {
+      border: 1px dashed var(--grey);
+      margin-bottom: 10px;
+      position: relative;
+    }
+    #ticket-seat {
+      font-weight: bold;
+    }
+    &_info {
+      padding-bottom: 10px;
+      width: 100%;
+    }
+    &_amount {
+      width: 100%;
+    }
+    &_button {
+      background-color: var(--yellow);
+      padding: 0.8rem;
+      font-size: 12px;
+      border: none;
+      border-radius: $border-radius / 2;
+      width: 100%;
+      margin-top: 0.5rem;
+      letter-spacing: 2px;
+      color: inherit;
+      font-weight: bold;
+    }
+    #ticket-amount {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  }
+}
+
+%box {
+  width: 20px;
+  height: 20px;
+  border-radius: $border-radius / 4;
+  display: inline-flex;
+  margin-right: 6px;
+}
+
+.info-seat {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 12px;
+  padding: 1rem;
+  border-radius: $border-radius / 2;
+  border: 1px solid var(--light);
+  li {
+    display: flex;
+    align-items: center;
+  }
+  .selected {
+    @extend %box;
+    background-color: var(--yellow);
+  }
+  .other-basket {
+    @extend %box;
+    background-color: var(--red);
+  }
+  .full {
+    @extend %box;
+    background-color: var(--grey);
+  }
+  .null {
+    @extend %box;
+    background-color: var(--white);
+    border: 2px solid var(--grey);
+  }
+}
+
+.seatrow {
+  display: flex;
+  justify-content: center;
+  .seat {
+    height: 30px;
+    width: 30px;
+    border-radius: $border-radius / 3;
+    border: 2px solid var(--grey);
+    color: var(--seat-color);
+    margin: 4px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    text-align: center;
+
+    &.reserved:hover,
+    &.full:hover {
+      cursor: default;
+      transform: scale(1);
+    }
+    &:hover {
+      transform: scale(1.15);
+      background-color: var(--yellow);
+      border: none;
+      cursor: pointer;
+    }
+    &.selected {
+      color: var(--selected-color);
+      background-color: var(--yellow);
+      border: none;
+    }
+    &.reserved {
+      background-color: var(--grey);
+    }
+    &.full {
+      background-color: var(--red);
+      color: var(--white);
+      border: none;
+    }
+  }
+}
+
+.screen {
+  height: 130px;
+  width: 100%;
+  border-radius: $border-radius;
+  min-height: 150px;
+  color: var(--white);
+  background-color: var(--grey);
+  &::after {
+    content: "movie";
+    letter-spacing: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="movie">
+            <div class="movie-container">
+                <div class="movie-poster">
+                    <img src="avatar.jpg">
+                </div>
+                <div class="movie-content">
+                    <h1>Avatar</h1>
+                    <p>City's Nişantaşı - CINEWAM Premium</p>
+                    <p>22 Ekim 2023 Pazar, 19:00</p>
+                    <div class="movie-ticked">
+                        <select name="" id="ticked-select">
+                            <option disabled>Bilet Fiyatları</option>
+                            <option value="200">200 TL Tam</option>
+                            <option value="100">100 TL Öğrenci</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="ticket">
+                <p class="ticket_info"><span id="ticket-seat"></span>
+                    <br>
+                    <span id="ticket-count"></span>
+                    koltuk için
+                    hesaplanan
+                </p>
+                <div class="hr"></div>
+                <p class="ticket_amount"><span id="ticket-amount"></span>₺</p>
+                <button class="ticket_button">ŞİMDİ ÖDEME YAP</button>
+            </div>
+        </div>
+        <ul class="info-seat">
+            <li>
+                <div class="selected"></div><span>Seçilen</span>
+            </li>
+            <li>
+                <div class="other-basket"></div><span>Başka Sepette</span>
+            </li>
+            <li>
+                <div class="full"></div><span>Dolu</span>
+            </li>
+            <li>
+                <div class="null"></div><span>Boş</span>
+            </li>
+        </ul>
+
+        <div class="seat-container">
+            <div class="seatrow">
+                <div class="seat">E1</div>
+                <div class="seat">E2</div>
+                <div class="seat">E3</div>
+                <div class="seat reserved">E4</div>
+                <div class="seat">E5</div>
+                <div class="seat">E6</div>
+                <div class="seat">E7</div>
+                <div class="seat">E8</div>
+                <div class="seat">E9</div>
+                <div class="seat">E10</div>
+            </div>
+            <div class="seatrow">
+                <div class="seat">D1</div>
+                <div class="seat">D2</div>
+                <div class="seat">D3</div>
+                <div class="seat">D4</div>
+                <div class="seat">D5</div>
+                <div class="seat">D6</div>
+                <div class="seat">D7</div>
+                <div class="seat">D8</div>
+                <div class="seat">D9</div>
+                <div class="seat">D10</div>
+            </div>
+            <div class="seatrow">
+                <div class="seat">C1</div>
+                <div class="seat">C2</div>
+                <div class="seat">C3</div>
+                <div class="seat full">C4</div>
+                <div class="seat full">C5</div>
+                <div class="seat">C6</div>
+                <div class="seat">C7</div>
+                <div class="seat">C8</div>
+            </div>
+            <div class="seatrow">
+                <div class="seat">B1</div>
+                <div class="seat">B2</div>
+                <div class="seat">B3</div>
+                <div class="seat">B4</div>
+                <div class="seat">B5</div>
+                <div class="seat">B6</div>
+                <div class="seat">B7</div>
+                <div class="seat">B8</div>
+            </div>
+            <div class="seatrow">
+                <div class="seat">A1</div>
+                <div class="seat">A2</div>
+                <div class="seat">A3</div>
+                <div class="seat">A4</div>
+                <div class="seat">A5</div>
+                <div class="seat">A6</div>
+                <div class="seat">A7</div>
+                <div class="seat">A8</div>
+            </div>
+        </div>
+
+        <div class="screen"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
